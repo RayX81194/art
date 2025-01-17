@@ -1,14 +1,23 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Button from './assets/components/Button.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-    </>
+   <div className="container">
+    <section>
+    <h1>Manish Phartiyal</h1>
+    <p>Art Student from College of Art,Delhi</p>
+    <div className='nav'>
+      <Button link='about' text='about' />
+      <Button link='contact' text='contact' />
+      <Button link='pictures' text='pictures' />
+    </div>
+    </section>
+    
+   </div>
   )
 }
 

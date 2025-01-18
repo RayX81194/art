@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
 import insta from './assets/Instagram.svg'
 import linkedin from './assets/Linkedin.svg'
-import youtube from './assets/Youtube.svg'
+import youtube from './assets/youtube.svg'
 import one from './assets/1.jpg';
 import two from './assets/2.jpg';
 import three from './assets/3.jpg';

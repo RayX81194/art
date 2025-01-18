@@ -1,20 +1,29 @@
-import { useState } from 'react'
+
 import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
-import Button from './assets/components/Button.jsx'
 import insta from './assets/Instagram.svg'
 import linkedin from './assets/Linkedin.svg'
 import youtube from './assets/Youtube.svg'
-import one from './assets/1.jpg'
-import two from './assets/2.jpg'
-import three from './assets/3.jpg'
-import four from './assets/4.jpg'
-import five from './assets/5.jpg'
-import six from './assets/6.jpg'
-import seven from './assets/7.jpg'
-import eight from './assets/8.jpg'
-import nine from './assets/9.jpg'
-
+import one from './assets/1.jpg';
+import two from './assets/2.jpg';
+import three from './assets/3.jpg';
+import four from './assets/4.jpg';
+import five from './assets/5.jpg';
+import six from './assets/6.jpg';
+import seven from './assets/7.jpg';
+import eight from './assets/8.jpg';
+import nine from './assets/9.jpg';
+import ten from './assets/10.jpg';
+import eleven from './assets/11.jpg';
+import twelve from './assets/12.jpg';
+import thirteen from './assets/13.jpg';
+import fourteen from './assets/14.jpg';
+import fifteen from './assets/15.jpg';
+import sixteen from './assets/16.jpg';
+import seventeen from './assets/17.jpg';
+import eighteen from './assets/18.jpg';
+import nineteen from './assets/19.jpg';
+import twenty from './assets/20.jpg';
 function App() {
   return (
     <div className="flex h-full">
@@ -69,15 +78,26 @@ function Contact() {
 function Pictures() {
   return (
     <section className='w-full list mr-1'>
-      <img src={one} alt='1' />
-      <img src={two} alt='1' />
-      <img src={three} alt='1' />
-      <img src={four} alt='1' />
-      <img src={five} alt='1' />
-      <img src={six} alt='1' />
-      <img src={seven} alt='1' />
-      <img src={eight} alt='1' />
-      <img src={nine} alt='1' />
+<img src={one} alt="1" />
+<img src={two} alt="2" />
+<img src={three} alt="3" />
+<img src={four} alt="4" />
+<img src={five} alt="5" />
+<img src={six} alt="6" />
+<img src={seven} alt="7" />
+<img src={eight} alt="8" />
+<img src={nine} alt="9" />
+<img src={ten} alt="10" />
+<img src={eleven} alt="11" />
+<img src={twelve} alt="12" />
+<img src={thirteen} alt="13" />
+<img src={fourteen} alt="14" />
+<img src={fifteen} alt="15" />
+<img src={sixteen} alt="16" />
+<img src={seventeen} alt="17" />
+<img src={eighteen} alt="18" />
+<img src={nineteen} alt="19" />
+<img src={twenty} alt="20" />
     </section>   
   )
 }

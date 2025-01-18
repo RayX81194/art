@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     font-family: "Inter", serif;
-  }
-  
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    display: none;
+}
+

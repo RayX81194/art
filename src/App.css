@@ -12,3 +12,9 @@ img {
 
     columns: 250px;
   }
+
+  @media (max-width: 640px) {
+    .list {
+      columns: 110px;
+    }
+  }

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 
 import { Routes, Route, Link } from 'react-router-dom'
 import './App.css'
@@ -24,29 +25,61 @@ import seventeen from './assets/17.jpg';
 import eighteen from './assets/18.jpg';
 import nineteen from './assets/19.jpg';
 import twenty from './assets/20.jpg';
+import menu from './assets/menu.svg'
 function App() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
+  }
+
   return (
-    <div className="flex h-full">
-      <section className='fixed w-[300px] flex flex-col pt-10 pl-5 pr-20 h-full'>
-        <h1 className='text-3xl font-bold'>Manish Phartiyal</h1>
-        <p className='my-2 text-lg text-gray-500 max-w-[220px]'>
-          <span className='font-semibold'>Art Student</span> from <span className='font-semibold'>College of Art, Delhi</span>
-        </p>
-        <ul>
-          <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/about'>about</Link></li>
-          <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/contact'>contact</Link></li>
-          <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/'>pictures</Link></li>
-        </ul>
-        <ul className='socials mt-5 flex gap-5'>
-          <li><a href='https://www.instagram.com/manish.phartiyal/'><img src={insta} alt='insta' className='w-[25px] h-[25px]' /></a></li>
-          <li><a href='https://www.youtube.com/@RayX81194/'><img src={youtube} alt='yt' className='w-[25px] h-[25px]' /></a></li>
-          <li><a href='https://www.linkedin.com/manishphartiyal/'><img src={linkedin} alt='linkedin' className='w-[25px] h-[25px]' /></a></li>
-        </ul>
-        <div className='footer flex justify-start items-end my-5 h-full'>
-          <p className='text-base text-gray-500'>Made by <span className='font-semibold'>Ray</span></p>
+    <div className="flex sm:flex-row flex-col h-full">
+      <section className='sm:fixed w-[300px] flex flex-col sm:pt-10 py-5 pl-5 pr-20 sm:h-full'>
+        <h1 className='sm:text-3xl text-xl font-bold'>MP</h1>
+        <div className='intro sm:block hidden'>
+            <p className='my-2 text-lg text-gray-500 max-w-[220px]'>
+              <span className='font-semibold'>Art Student</span> from <span className='font-semibold'>College of Art, Delhi</span>
+            </p>
+            <ul>
+              <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/about'>about</Link></li>
+              <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/contact'>contact</Link></li>
+              <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/'>pictures</Link></li>
+            </ul>
+            <ul className='socials mt-5 flex gap-5'>
+              <li><a href='https://www.instagram.com/manish.phartiyal/'><img src={insta} alt='insta' className='w-[25px] h-[25px]' /></a></li>
+              <li><a href='https://www.youtube.com/@RayX81194/'><img src={youtube} alt='yt' className='w-[25px] h-[25px]' /></a></li>
+              <li><a href='https://www.linkedin.com/manishphartiyal/'><img src={linkedin} alt='linkedin' className='w-[25px] h-[25px]' /></a></li>
+            </ul>
         </div>
+        <div className='footer sm:block hidden my-5 h-full'>
+            <p className='text-sm text-gray-500'>Made by <span className='font-semibold'>Ray</span></p>
+        </div>
+        {isOpen && (
+          
+          <div className='w-full h-full absolute top-0 left-0 bg-white p-5'>
+            <h1 className='sm:text-3xl text-xl font-bold'>Manish Phartiyal</h1>
+            <p className='my-2 text-lg text-gray-500 max-w-[220px]'>
+              <span className='font-semibold'>Art Student</span> from <span className='font-semibold'>College of Art, Delhi</span>
+            </p>
+            <ul>
+              <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/about'>about</Link></li>
+              <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/contact'>contact</Link></li>
+              <li className='font-semibold text-base px-2 py-1 rounded-md w-[max-content] hover:bg-yellow-400'><Link to='/'>pictures</Link></li>
+            </ul>
+            <ul className='socials mt-5 flex gap-5'>
+              <li><a href='https://www.instagram.com/manish.phartiyal/'><img src={insta} alt='insta' className='w-[25px] h-[25px]' /></a></li>
+              <li><a href='https://www.youtube.com/@RayX81194/'><img src={youtube} alt='yt' className='w-[25px] h-[25px]' /></a></li>
+              <li><a href='https://www.linkedin.com/manishphartiyal/'><img src={linkedin} alt='linkedin' className='w-[25px] h-[25px]' /></a></li>
+            </ul>
+            <div className='footer my-5 h-full'>
+              <p className='text-sm text-gray-500'>Made by <span className='font-semibold'>Ray</span></p>
+            </div>
+          </div>
+        )}
+        <button onClick={toggleMenu} className='sm:hidden fixed top-6 right-5'><img src={menu} alt='menu' className='w-[25px] h-[25px]' /></button>
       </section>
-      <section className='w-full ml-[300px] overflow-y-scroll'>
+      <section className='w-full sm:ml-[300px] overflow-y-scroll'>
         <Routes>
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
@@ -56,7 +89,6 @@ function App() {
     </div>
   )
 }
-
 function About() {
   return (
     <div className='p-5'>
